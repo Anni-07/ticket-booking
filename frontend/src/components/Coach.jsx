@@ -11,6 +11,8 @@ export const Coach = () => {
     const [requiredSeats, setRequiredSeats] = useState("");
     const [allSeatsdata, setAllSeatsData] = useState([]);
     const [currentBookedSeats, setCurrentBookedSeats] = useState([]);
+    const [bookingLoading, setBookingLoading] = useState(false);
+    const [resettingLoading, setResettingLoading] = useState(false);
 
     const allSeats = async () => {
         try {
@@ -37,6 +39,7 @@ export const Coach = () => {
             setRequiredSeats("");
             return;
         }
+        setBookingLoading(true);
 
         try {
             const resp = await axios.put(`${Proxy}/${requiredSeats}`);
@@ -51,9 +54,11 @@ export const Coach = () => {
             console.log("error while booking the seats", error.message);
         }
         setRequiredSeats("");
+        setBookingLoading(false);
     };
 
     const handleReseting = async () => {
+        setResettingLoading(true);
         try {
             await axios.put(`${Proxy}/resetAll`);
             allSeats();
@@ -63,6 +68,7 @@ export const Coach = () => {
             toast.error("Error while resetting seats");
             console.log("error while reseting the seats", error.message);
         }
+        setResettingLoading(false);
     };
 
     useEffect(() => {
@@ -71,7 +77,7 @@ export const Coach = () => {
 
     return (
         <div className="container">
-            <ToastContainer 
+            <ToastContainer
                 position="top-right"
                 autoClose={5000}
                 hideProgressBar={false}
@@ -83,7 +89,7 @@ export const Coach = () => {
                 pauseOnHover
                 theme="colored"
             />
-            
+
             <h1>Ticket Booking </h1>
             <div className="mainComponent">
                 <div className="coach">
@@ -135,11 +141,19 @@ export const Coach = () => {
                             min="1"
                             max="7"
                         />
-                        <button className="bookingButton" onClick={handleBooking}>
-                            Book Ticket
+                        <button
+                            className="bookingButton"
+                            onClick={handleBooking}
+                            disabled={bookingLoading}
+                        >
+                            {bookingLoading ? "Booking..." : "Book Ticket"}
                         </button>
-                        <button className="resetAll" onClick={handleReseting}>
-                            Reset Bookings
+                        <button
+                            className="resetAll"
+                            onClick={handleReseting}
+                            disabled={resettingLoading}
+                        >
+                            {resettingLoading ? "Resetting..." : "Reset Bookings"}
                         </button>
                     </div>
                 </div>
