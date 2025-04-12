@@ -4,7 +4,7 @@ import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-// const Proxy = "http://localhost:8080/seats";   // the base URL 
+// const Proxy = "http://localhost:8080/seats";  
 const Proxy = "https://ticket-booking-raze.onrender.com";
 
 export const Coach = () => {
