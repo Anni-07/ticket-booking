@@ -4,8 +4,8 @@ import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const Proxy = "http://localhost:8080/seats";   // the base URL 
-// const Proxy = "https://seat-booking-api.onrender.com/seats";
+// const Proxy = "http://localhost:8080/seats";   // the base URL 
+const Proxy = "https://ticket-booking-raze.onrender.com";
 
 export const Coach = () => {
     const [requiredSeats, setRequiredSeats] = useState("");
