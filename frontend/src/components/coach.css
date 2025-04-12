@@ -1,0 +1,226 @@
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8fafc;
+    color: #1e293b;
+    line-height: 1.6;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    padding: 2rem 1rem;
+}
+
+.container h1 {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #1e293b;
+    margin-bottom: 1.5rem;
+}
+
+/* Layout Wrapper */
+.mainComponent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem 1rem;
+    flex-direction: row-reverse;
+}
+
+/* Coach Section */
+.coach {
+    width: 100%;
+    max-width: 600px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(3rem, 1fr));
+    gap: 1rem;
+    justify-content: center;
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: .8rem;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 16px;
+}
+
+/* Seat Styles */
+.seats {
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: .4rem;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #10b981;
+    border: 1px solid #d1fae5;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.seats:hover {
+    transform: scale(1.08);
+    background-color: #059669;
+}
+
+/* Loading Text */
+.loading {
+    text-align: center;
+    font-size: 1rem;
+    color: #64748b;
+}
+
+/* Booking Section */
+.booking {
+    width: 100%;
+    max-width: 420px;
+    background-color: #ffffff;
+    border-radius: .8rem;
+    padding: 1.5rem;
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 4px 12px;
+}
+
+/* Input Styles */
+.booking input {
+    padding: .6rem;
+    width: 100%;
+    max-width: 250px;
+    border: 1px solid #94a3b8;
+    border-radius: .4rem;
+    margin-bottom: 1.2rem;
+    font-size: 1rem;
+    color: #1e293b;
+    background-color: #f1f5f9;
+}
+
+/* Seat Status Legend */
+.seatStatus {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.seatSattusDiv {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.statusColorbooked {
+    background-color: #cbd5e1;
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+}
+
+.statusColoravail {
+    background-color: #10b981;
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+}
+
+/* Buttons Layout */
+.inputButton {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* Buttons */
+.bookingButton,
+.resetAll {
+    padding: .6rem 1.2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: .4rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.bookingButton {
+    background-color: #6366f1;
+    color: #ffffff;
+}
+
+.bookingButton:hover {
+    background-color: #4f46e5;
+    transform: translateY(-2px);
+}
+
+.resetAll {
+    background-color: #ef4444;
+    color: #ffffff;
+}
+
+.resetAll:hover {
+    background-color: #dc2626;
+    transform: translateY(-2px);
+}
+
+/* Booked Seats Section */
+.currentBookedSeats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem 0;
+}
+
+.bookedSeats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    justify-content: center;
+}
+
+.bookedSeats button {
+    width: 2.3rem;
+    height: 2.3rem;
+    background-color: #cbd5e1;
+    border: 1px solid #94a3b8;
+    border-radius: .4rem;
+    font-weight: bold;
+    color: #1e293b;
+}
+
+/* Responsive Handling */
+@media (max-width: 1024px) {
+    .mainComponent {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .coach,
+    .booking {
+        width: 90%;
+    }
+}
+
+@media (max-width: 640px) {
+    .seats {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 0.85rem;
+    }
+
+    .booking input {
+        max-width: 100%;
+    }
+
+    .container h1 {
+        font-size: 1.8rem;
+    }
+}
