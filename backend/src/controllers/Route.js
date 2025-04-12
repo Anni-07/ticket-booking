@@ -4,21 +4,6 @@ const router = express.Router();
 const seatArray = require("../data");
 
 
-
-
-// post route for creating seats in the coach
-// router.post("/", async (req, res) => {
-
-
-//     try {
-//         // const totalseats = await Seats.find();
-//         const seat = await Seats.insertMany(seatArray);
-//         res.status(201).send(seat)
-//     } catch (error) {
-//         res.status(500).json({ message: error.message })
-
-//     }
-// });
 router.post("/initialize-seats", async (req, res) => {
     try {
         // Check if seats already exist
