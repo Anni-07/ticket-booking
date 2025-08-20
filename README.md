@@ -1,4 +1,4 @@
-# Ticket Booking 
+# Ticket Booking (QueueSeat)
 
 The **Ticket Booking** is a web application that allows users to book seats in a coach. It provides a user-friendly interface for selecting seats and managing bookings.
 
